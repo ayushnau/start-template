@@ -1,0 +1,76 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+	content: [
+		"./src/**/*.{js,jsx,ts,tsx}",
+		"./index.html",
+		"../../packages/components/**/*.{tsx,ts,jsx,js}",
+		"../../packages/**/*.{tsx,ts,jsx,js}",
+		"../../node_modules/@locoworks/**/*.{tsx,ts,jsx,js}",
+	],
+	theme: {
+		extend: {
+			height: {
+				maxheight72minus: "calc(100vh - 72px)",
+			},
+			backgroundImage: {
+				backgroundShimmerGradient:
+					"linear-gradient(83deg, #EEE 18.91%, #F3F3F3 32.65%, #F3F3F3 37.75%, #F3F3F3 40.89%, #EEE 58.72%)",
+			},
+			boxShadow: {
+				boxShadow:
+					"0px -16px 75px 0px rgba(0, 0, 0, 0.10), 0px 10px 20px 0px rgba(0, 0, 0, 0.05)",
+				sidebar: "2px 0px 10px 0px rgba(0, 0, 0, 0.10);",
+			},
+			colors: {
+				primaryBlue: "#2176FF",
+				textColorGray: "#717171",
+				blackDark: "#212121",
+				semiLightGray: "#DEDEDE",
+				bgRed: "#AB404A",
+				bgGreen: "#057D45",
+				bgYellow: "#B17D05",
+				black_light: "#F5F5F5",
+				"red-light": "#FDDEE1",
+				text_dark_red: "#AB404A",
+				green_light: "#D1F0E1",
+				text_dark_green: "#057D45",
+				"red-core": "#F45B69",
+				input_gray: "#F3F3F3",
+				///colors from figma design patterns
+				"cornflower-blue-3": "#0442A5",
+				"cornflower-blue-2": "#2176FF",
+				"cornflower-blue-1": "#D3E4FF",
+				"cornflower-blue-5": "#E3F4FF",
+				"sunset-orange-3": "#AB404A",
+				"sunset-orange-2": "#F45B69",
+				"sunset-orange-1": "#FDDEE1",
+				"spanish-yellow-5":"#FFDEAC",
+				"spanish-yellow-4": "#7E5700",
+				"spanish-yellow-3": "#B17D05",
+				"spanish-yellow-2": "#FDB30C",
+				"spanish-yellow-1": "#FFF0CE",
+				"spanish-yellow-core": "#F1A906",
+				"mountain-meadow-dark": "#006C51",
+				"mountain-meadow-3": "#057D45",
+				"mountain-meadow-2": "#0AA65C",
+				"mountain-meadow-1": "#D1F0E1",
+				"mine-shaft-4": "#212121",
+				"mine-shaft-3": "#717171",
+				"mine-shaft-2": "#DEDEDE",
+				"mine-shaft-1": "#F5F5F5",
+				"bean-red-dark": "#BA1A1A",
+				"bean-red-light": "#FFDADA",
+				"pringal-red-1": "#F1EEFF",
+				"color-black-6": "#646464",
+				"color-black-4": "#A6A6A6",
+				"color-black-5": "#909090",
+				"color-black-1": "#E9E9E9",
+				"color-black-3": "#BCBCBC",
+			},
+			fontSize: {
+				25: "25px",
+			},
+		},
+	},
+	plugins: [require("@tailwindcss/forms"), require("tailwind-scrollbar-hide")],
+};

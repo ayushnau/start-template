@@ -1,0 +1,44 @@
+name: Publish Production
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      deployments: write
+
+    strategy:
+      matrix:
+        include:
+          - projectName: "workflows-production"
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v3
+
+      - name: Setup node env 🏗
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "yarn"
+
+      - name: Install dependencies 👨🏻‍💻
+        run: yarn
+
+      - name: Run build
+        run: yarn build:production
+
+      - name: Publish
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_PRODUCTION_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_PRODUCTION_ACCOUNT_ID }}
+          projectName: ${{ matrix.projectName }}
+          directory: ./apps/wiredup/dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

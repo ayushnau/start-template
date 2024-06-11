@@ -1,0 +1,8 @@
+.tooltip::before {
+  position: absolute;
+  content: "";
+  border: 15px solid transparent;
+  border-bottom-color: #212121;
+  left: 50%;
+  transform: translate(-130%, -110%);
+}

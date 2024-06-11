@@ -1,0 +1,13 @@
+{
+  "name": "services",
+  "version": "0.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "dependencies": {
+    "@types/papaparse": "^5.3.14",
+    "axios": "^1.4.0",
+    "papaparse": "^5.4.1",
+    "xlsjs": "^1.0.1",
+    "xlsx": "^0.18.5"
+  }
+}

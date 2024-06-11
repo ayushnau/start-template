@@ -1,0 +1,12 @@
+{
+  "name": "store",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "react-redux": "^8.0.7",
+    "redux": "^4.2.1",
+    "redux-persist": "^6.0.0"
+  }
+}

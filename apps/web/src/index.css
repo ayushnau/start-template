@@ -1,0 +1,154 @@
+@import url("https://unpkg.com/react-calendar/dist/Calendar.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, html{
+  user-select: none;
+}
+.no-touch-highlight {
+  -webkit-touch-callout: none; /* Disable callout */
+  -webkit-user-select: none; /* Disable selection */
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.my-custom-class {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: slide-top-left 1s ease-in forwards;
+  /* animation-delay: 0.2s; */
+}
+
+.my-custom-class2 {
+  position: absolute;
+  top: 100%;
+  animation: slide-bottom-top 1s ease-in forwards;
+  /* animation-delay: 0.2s; */
+}
+
+@keyframes slide-bottom-top {
+  0% {
+    transform: translate(0%);
+  }
+  100% {
+    transform: translate(0);
+    top: 135px;
+  }
+}
+
+@keyframes slide-top-left {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: translate(0, 0) scale(0.7);
+    top: 45px;
+    left: -6px;
+  }
+}
+
+@keyframes slide-bottom-top-infocontent {
+  0% {
+    transform: translateY(90%);
+  }
+
+  100% {
+    transform: translateY(10%);
+  }
+}
+.no-touch-highlight:focus {
+  outline: none !important;
+}
+
+.slide-right-to-left {
+  animation: slideRightToLeft 0.2s ease-in-out;
+}
+
+.shadow-style-chooser {
+  box-shadow: 0px 0px 80px 0px hsla(0, 0%, 0%, 0.15);
+}
+
+@keyframes slideRightToLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.reactCalendar {
+  border: 0 !important;
+}
+abbr[title] {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: #757575;
+}
+.react-calendar__tile--hasActive {
+  background: #000000;
+}
+.react-calendar__tile--now {
+  background: #000000;
+}
+
+.custom-select {
+  /* Set the background color of the select dropdown */
+  /* background-color: ; */
+
+  /* Set the color of the text inside the select dropdown */
+  color: #000000;
+
+  /* Adjust the size and padding of the select dropdown */
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 10px;
+
+  /* Set the appearance property to none to remove the default dropdown arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Add a custom background image as the dropdown arrow */
+  background-image: url("./assets/dropdown.svg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10%) center;
+  background-size: 16px; /* Adjust the size of the custom arrow */
+
+  display: inline-block;
+  width: fit-content;
+}
+
+/* Set the color of the custom arrow image */
+.custom-select::-ms-expand {
+  color: #ff0000; /* Replace with your desired color */
+}

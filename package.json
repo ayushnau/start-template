@@ -1,0 +1,39 @@
+{
+  "private": true,
+  "prettier": "@betalectic-reusejs/shared-config-prettier-ts",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --concurrency 15",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "build:staging": "turbo run wiredup#build:staging",
+    "build:production": "turbo run wiredup#build:production",
+    "web-build:staging": "turbo run wiredup-web#build:staging",
+    "web-build:production": "turbo run wiredup-web#build:production",
+    "preview": "turbo run preview",
+    "web:dev": "turbo run web#dev"
+  },
+  "devDependencies": {
+    "@betalectic-reusejs/shared-config-prettier-ts": "1.0.0",
+    "@turbo/gen": "^1.9.7",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "*",
+    "postcss": "^8.4.31",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.3.3",
+    "turbo": "^1.9.7"
+  },
+  "name": "webapp-template",
+  "packageManager": "yarn@1.22.19",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "chart.js": "^4.4.2",
+    "react-chart.js": "^1.0.0",
+    "react-chartjs-2": "^5.2.0",
+    "zod": "^3.22.4"
+  }
+}
